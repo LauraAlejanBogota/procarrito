@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    /* Variables header */
+    --logo:60px;
+    --buscar:40px;
+    /* Variables productos */
+    --imgproductos: 135px;
+    --signopesos:50px;
+    --imgsignos:30px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 15vh 9vh 1fr 0.4fr;
+    gap: 1.5em;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header header header header"
+      "filter filter filter filter"
+      "products products products products"
+      "footer footer footer footer";
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #7B5931;
+}
+
+/* Estilos de pagina principal */
+/* Header */
+.header { 
+    grid-area: header; 
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    background-color: #F48E16;
+}
+
+.header .logo{
+    width: var(--logo);
+    height: var(--logo);
+    margin: 25px;
+}
+.buscador{
+    background-color: whitesmoke;
+    width: 1000px;
+    border-radius: 50px;
+}
+.buscador img{
+    width: var(--buscar);
+    height: var(--buscar);
+    margin: 13px;
+}
+/* Estilos del carrito */
+.cartDiv {
+    position: absolute;
+    top: 1vh;
+    right: 1vh; 
+}
+ .btncart{
+    background-color: Transparent ;
+    border: none ;
+    cursor:pointer ;
+}
+.cardlist{
+    display: none;
+    min-width: 100px;
+    right: 0;
+    top: 50px;
+    position: absolute;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.cardlist ul{
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+.cartDiv img{
+    max-width: 100px;
+}
+.cart img {
+    width: var(--logo);
+    height: var(--logo);
+}
+/* Botones de Filtro */
+.filter {
+    grid-area: filter;
+    margin:10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+}
+.filter a{
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 0.01px;
+    align-items: center;
+    text-decoration: none;
+    -webkit-text-stroke: 0.5px #000;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 25px;
+    color: white;
+    cursor: pointer;
+    width: 356px;
+    background: #F48E16;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+.filter img{
+    width: var(--logo);
+    height: var(--logo);
+    margin: 5px 20px 5px 20px;
+
+}
+/* Estilos de los productos */
+.products { 
+    grid-area: products; 
+    margin:10px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1em;
+}
+.cardroduct{
+    background: #F48E16;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    width: 356px;
+    height: 240px;
+}
+.carddescription{
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr) ;
+    gap: 1em;
+}
+.imgproducto{
+    width: var(--imgproductos);
+    height: var(--imgproductos);
+}
+.listdescription{
+    list-style: none;
+    color: #FFFFFF;
+}
+
+.listname{
+    -webkit-text-stroke: 0.5px #000;
+    font-weight: 900;
+    font-size: 25px;
+    line-height: 25px;
+    margin-bottom: 8px;
+}
+.listdescrip{
+    -webkit-text-stroke: 0.5px rgb(255, 162, 39);
+    font-weight: 700;
+    font-size: 17.5px;
+    line-height: 22px;
+}
+
+.cardfunctionality{
+    display: grid;
+    align-items: center;
+    margin: 15px;
+    grid-template-columns: 0.8fr 1.4fr 0.8fr;
+    background: #C4C4C4;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+}
+.imgsigno{
+    width: var(--signopesos);
+    height: var(--signopesos);
+}
+.cardfunctionality p{
+    -webkit-text-stroke: 1px #000;
+    font-size: 34px;
+    font-weight: 900;
+    color: #FFF; 
+}
+.buttonfunctionality{
+    margin: 5px;
+    background: #E73B3B;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 30px;
+}
+.buttonfunctionality button{
+    background-color: Transparent;
+    border: none;
+    cursor:pointer; 
+    margin-top: 4px; 
+    margin-left: 4px;
+}
+.imgsignomenos{
+    width: var(--imgsignos);
+    height: var(--imgsignos);
+}
+.imgsignomas{
+    width: var(--imgsignos);
+    height: var(--imgsignos);
+}
+/* Estilos del footer */
+.footer { 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-text-stroke: 0.5px #000;
+    font-size: 20px;
+    font-weight: 900;
+    color: #FFF; 
+    grid-area: footer; 
+    background: #F48E16;
+}  
